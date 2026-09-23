@@ -1,0 +1,376 @@
+:root {
+    --dark: #111827;
+    --white: #fff;
+    --gray: #eef0f3;
+    --text: #111;
+    --blue: #1683d8;
+    --yellow: #f5c400;
+    --border: #d5d9df;
+    --radius: 6px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body.page {
+    margin: 0;
+    background: var(--gray);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.35;
+}
+
+a { text-decoration: none; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+label:focus-visible {
+    outline: 3px solid var(--yellow);
+    outline-offset: 2px;
+}
+
+/* ENCABEZADO */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 120px;
+    padding: 10px;
+    background: var(--dark);
+    color: var(--white);
+}
+
+.header__logo-link {
+    width: 125px;
+    height: 90px;
+    display: block;
+    background: var(--white);
+}
+
+.header__logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header__center { flex: 1; text-align: center; }
+
+.header__title {
+    margin: 0 0 8px;
+    font-size: 34px;
+}
+
+.search {
+    display: flex;
+    max-width: 680px;
+    margin: auto;
+    overflow: hidden;
+    background: var(--white);
+    border-radius: 22px;
+}
+
+.search__input {
+    flex: 1;
+    min-width: 0;
+    padding: 9px 14px;
+    border: 0;
+}
+
+.search__button {
+    width: 45px;
+    border: 0;
+    background: var(--white);
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.nav__link {
+    color: #c7ccd4;
+    font-size: 13px;
+}
+
+.nav__link:hover { color: var(--yellow); }
+
+/* MENÚ */
+.menu-control {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hamburger {
+    width: 55px;
+    padding: 12px;
+    background: #17213a;
+    cursor: pointer;
+}
+
+.hamburger__line {
+    display: block;
+    height: 3px;
+    margin: 5px 0;
+    background: var(--yellow);
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    z-index: 1040;
+    width: 300px;
+    height: 100vh;
+    padding: 20px;
+    background: var(--white);
+    box-shadow: -5px 0 15px #0003;
+    transition: right .25s ease;
+}
+
+.side-menu__top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+
+.side-menu__title { margin: 0 0 12px; }
+
+.side-menu__close {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.side-menu__nav {
+    display: grid;
+    gap: 4px;
+    margin-top: 15px;
+}
+
+.side-menu__link {
+    padding: 12px;
+    color: var(--text);
+}
+
+.side-menu__link:hover {
+    background: var(--gray);
+    color: var(--blue);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1030;
+    display: none;
+    background: #0007;
+}
+
+#menu:checked ~ .side-menu { right: 0; }
+#menu:checked ~ .overlay { display: block; }
+
+/* SECCIONES */
+.section { padding: 10px 6px; }
+
+.tag {
+    display: inline-block;
+    margin: 0 0 8px;
+    padding: 5px 10px;
+    background: var(--white);
+    font-size: 20px;
+}
+
+.section__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.section__link {
+    padding: 5px 12px;
+    background: var(--white);
+    color: var(--text);
+    font-size: 13px;
+}
+
+/* CARRUSEL */
+.carousel-item { height: 400px; }
+
+.carousel-item__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(.5);
+}
+
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    right: 5%;
+    transform: translateY(-50%);
+    color: var(--white);
+}
+
+.hero__badge {
+    color: var(--yellow);
+    font-weight: bold;
+}
+
+.hero__title {
+    margin: 5px 0;
+    font-size: clamp(30px, 5vw, 48px);
+}
+
+.hero__desc { margin: 0 0 12px; }
+
+.btn-main,
+.btn-info {
+    display: inline-block;
+    padding: 8px 13px;
+    margin-right: 4px;
+}
+
+.btn-main {
+    background: var(--yellow);
+    color: var(--text);
+}
+
+.btn-info {
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+/* TARJETAS */
+.game {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: 45px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.game:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px #0002;
+}
+
+.game__img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.game__title {
+    margin: 15px 13px 8px;
+    font-size: 20px;
+}
+
+.game__genre,
+.game__link { margin: 0 13px; }
+
+.game__genre {
+    margin-bottom: 5px;
+    color: #606770;
+    font-size: 13px;
+}
+
+.game__link {
+    color: var(--blue);
+    font-size: 14px;
+}
+
+.game__rating {
+    position: absolute;
+    right: 12px;
+    bottom: 13px;
+}
+
+.info-card {
+    height: 100%;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.info-card__content { padding: 35px; }
+
+.info-card__title { font-size: 18px; }
+
+.info-card__desc { color: #606770; }
+
+.search-feedback {
+    min-height: 24px;
+    margin: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* PIE */
+.footer {
+    padding: 24px 12px;
+    background: var(--dark);
+    color: var(--white);
+    text-align: center;
+}
+
+.footer__title { margin: 0 0 5px; }
+
+.footer__text,
+.footer__copy { color: #c7ccd4; }
+
+.footer__text { margin: 0; }
+
+.footer__validators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.footer__copy {
+    display: block;
+    margin-top: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 868px) {
+    .header { flex-wrap: wrap; }
+
+    .header__logo-link {
+        width: 90px;
+        height: 65px;
+    }
+
+    .header__center { min-width: 70%; }
+
+    .header__title { font-size: 26px; }
+}
+
+@media (max-width: 580px) {
+    .header__center {
+        order: 3;
+        width: 100%;
+    }
+
+    .header__title { text-align: left; }
+
+    .nav { justify-content: flex-start; }
+
+    .carousel-item { height: 320px; }
+
+    .game__img { height: 240px; }
+
+    .hero__title { font-size: 28px; }
+
+    .hero__desc { font-size: 14px; }
+}
