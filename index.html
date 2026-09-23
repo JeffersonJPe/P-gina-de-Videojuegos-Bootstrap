@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solo GAME: videojuegos nuevos, destacados y próximos lanzamientos.">
+    <title>Solo GAME</title>
+
+    <!-- Bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="page">
+    <!-- Control del menú móvil -->
+    <input class="menu-control" type="checkbox" id="menu">
+
+    <!-- Encabezado -->
+    <header class="header">
+        <a class="header__logo-link" href="#inicio" aria-label="Ir al inicio">
+            <img class="header__logo-img" src="img/logo.jpg" alt="Logo de Solo GAME">
+        </a>
+
+        <div class="header__center">
+            <h1 class="header__title">Solo GAME</h1>
+
+            <form class="search" id="searchForm" role="search">
+                <label class="visually-hidden" for="searchInput">Buscar videojuegos</label>
+                <input class="search__input" id="searchInput" type="search"
+                       placeholder="Buscar videojuegos" autocomplete="off">
+                <button class="search__button" type="submit" aria-label="Buscar">⌕</button>
+            </form>
+
+            <nav class="nav" aria-label="Navegación principal">
+                <a class="nav__link" href="#categorias">Categorías</a>
+                <a class="nav__link" href="#plataformas">Plataformas</a>
+                <a class="nav__link" href="#noticias">Noticias</a>
+                <a class="nav__link" href="#guia">Guía</a>
+            </nav>
+        </div>
+
+        <label class="hamburger" for="menu" aria-label="Abrir menú" tabindex="0">
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+        </label>
+    </header>
+
+    <!-- Menú lateral -->
+    <aside class="side-menu" aria-label="Menú secundario">
+        <div class="side-menu__top">
+            <h2 class="side-menu__title">Menú</h2>
+            <label class="side-menu__close" for="menu" aria-label="Cerrar menú" tabindex="0">×</label>
+        </div>
+        <nav class="side-menu__nav">
+            <a class="side-menu__link" href="#inicio">Inicio</a>
+            <a class="side-menu__link" href="#nuevos">Juegos nuevos</a>
+            <a class="side-menu__link" href="#destacados">Juegos destacados</a>
+            <a class="side-menu__link" href="#salir">Juegos por salir</a>
+        </nav>
+    </aside>
+    <label class="overlay" for="menu" aria-label="Cerrar menú"></label>
+
+    <main class="main" id="inicio">
+        <!-- Recomendaciones -->
+        <section class="section" aria-labelledby="recomendaciones-title">
+            <h2 class="section__tag tag" id="recomendaciones-title">Recomendaciones</h2>
+
+            <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="ARC Raiders"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"
+                            aria-label="Minecraft"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"
+                            aria-label="Fortnite"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <article class="carousel-item active">
+                        <img class="carousel-item__img" src="img/arc-raiders.jpeg"
+                             alt="ARC Raiders" loading="eager">
+                        <div class="hero">
+                            <span class="hero__badge">Recomendado</span>
+                            <h3 class="hero__title">ARC Raiders</h3>
+                            <p class="hero__desc">Acción y supervivencia para jugar con estrategia.</p>
+                            <a class="btn-main" href="#jugar">▷ Jugar</a>
+                            <a class="btn-info" href="#info">ⓘ Más información</a>
+                        </div>
+                    </article>
+
+                    <article class="carousel-item">
+                        <img class="carousel-item__img" src="img/Minecraf.jpg"
+                             alt="Minecraft" loading="lazy">
+                        <div class="hero">
+                            <span class="hero__badge">Recomendado</span>
+                            <h3 class="hero__title">Minecraft</h3>
+                            <p class="hero__desc">Construye, explora y crea tu propia aventura.</p>
+                            <a class="btn-main" href="#jugar">▷ Jugar</a>
+                            <a class="btn-info" href="#info">ⓘ Más información</a>
+                        </div>
+                    </article>
+
+                    <article class="carousel-item">
+                        <img class="carousel-item__img" src="img/fortnite.jpg"
+                             alt="Fortnite" loading="lazy">
+                        <div class="hero">
+                            <span class="hero__badge">Recomendado</span>
+                            <h3 class="hero__title">Fortnite</h3>
+                            <p class="hero__desc">Partidas rápidas, construcción y competencia.</p>
+                            <a class="btn-main" href="#jugar">▷ Jugar</a>
+                            <a class="btn-info" href="#info">ⓘ Más información</a>
+                        </div>
+                    </article>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
+                        data-bs-slide="prev" aria-label="Anterior">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel"
+                        data-bs-slide="next" aria-label="Siguiente">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Juegos nuevos -->
+        <section class="section" id="nuevos" aria-labelledby="nuevos-title">
+            <div class="section__head">
+                <h2 class="section__tag tag" id="nuevos-title">Juegos nuevos</h2>
+                <a class="section__link" href="#destacados">Ver más →</a>
+            </div>
+            <div class="row g-3 game-list">
+                <article class="col-12 col-md-6 col-lg-4">
+                    <div class="game">
+                        <img class="game__img" src="img/silksong.jpeg" alt="Hollow Knight: Silksong" loading="lazy">
+                        <h3 class="game__title">Hollow Knight: Silksong</h3>
+                        <p class="game__genre">Acción · Aventura</p>
+                        <a class="game__link" href="#nuevos">Más información</a>
+                        <b class="game__rating" aria-label="Calificación 4.8 de 5">★ 4.8</b>
+                    </div>
+                </article>
+
+                <article class="col-12 col-md-6 col-lg-4">
+                    <div class="game">
+                        <img class="game__img" src="img/cyberpunk.jpeg" alt="Cyberpunk 2077" loading="lazy">
+                        <h3 class="game__title">Cyberpunk 2077</h3>
+                        <p class="game__genre">RPG · Acción</p>
+                        <a class="game__link" href="#nuevos">Más información</a>
+                        <b class="game__rating" aria-label="Calificación 4.2 de 5">★ 4.2</b>
+                    </div>
+                </article>
+
+                <article class="col-12 col-md-6 col-lg-4">
+                    <div class="game">
+                        <img class="game__img" src="img/halo.png" alt="Halo" loading="lazy">
+                        <h3 class="game__title">Halo</h3>
+                        <p class="game__genre">Shooter · Acción</p>
+                        <a class="game__link" href="#nuevos">Más información</a>
+                        <b class="game__rating" aria-label="Calificación 4.6 de 5">★ 4.6</b>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Juegos destacados -->
+        <section class="section" id="categorias" aria-labelledby="destacados-title">
+            <div class="section__head">
+                <h2 class="section__tag tag" id="destacados-title">Juegos destacados</h2>
+                <a class="section__link" href="#inicio">Ver más →</a>
+            </div>
+            <div class="row g-3 game-list">
+                <article class="col-12 col-md-6 col-lg-4">
+                    <div class="game">
+                        <img class="game__img" src="img/gtavi.jpg" alt="Grand Theft Auto V" loading="lazy">
+                        <h3 class="game__title">Grand Theft Auto V</h3>
+                        <p class="game__genre">Acción · Mundo abierto</p>
+                        <a class="game__link" href="#categorias">Más información</a>
+                        <b class="game__rating" aria-label="Calificación 4.6 de 5">★ 4.6</b>
+                    </div>
+                </article>
+
+                <article class="col-12 col-md-6 col-lg-4">
+                    <div class="game">
+                        <img class="game__img" src="img/fortnite.jpg" alt="Fortnite" loading="lazy">
+                        <h3 class="game__title">Fortnite</h3>
+                        <p class="game__genre">Battle Royale · Acción</p>
+                        <a class="game__link" href="#categorias">Más información</a>
+                        <b class="game__rating" aria-label="Calificación 4.4 de 5">★ 4.4</b>
+                    </div>
+                </article>
+
+                <article class="col-12 col-md-6 col-lg-4">
+                    <div class="game">
+                        <img class="game__img" src="img/Minecraf.jpg" alt="Minecraft" loading="lazy">
+                        <h3 class="game__title">Minecraft</h3>
+                        <p class="game__genre">Supervivencia · Construcción</p>
+                        <a class="game__link" href="#categorias">Más información</a>
+                        <b class="game__rating" aria-label="Calificación 4.7 de 5">★ 4.7</b>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Juegos por salir -->
+        <section class="section" id="destacados" aria-labelledby="salir-title">
+            <div class="section__head">
+                <h2 class="section__tag tag" id="salir-title">Juegos por salir</h2>
+                <a class="section__link" href="#inicio">Ver más →</a>
+            </div>
+            <div class="row g-3 game-list">
+                <article class="col-12 col-md-6 col-lg-4">
+                    <div class="game">
+                        <img class="game__img" src="img/gtavi.jpg" alt="Grand Theft Auto V" loading="lazy">
+                        <h3 class="game__title">Grand Theft Auto V</h3>
+                        <p class="game__genre">Acción · Mundo abierto</p>
+                        <a class="game__link" href="#destacados">Más información</a>
+                        <b class="game__rating" aria-label="Calificación 4.6 de 5">★ 4.6</b>
+                    </div>
+                </article>
+
+                <article class="col-12 col-md-6 col-lg-4">
+                    <div class="game">
+                        <img class="game__img" src="img/fallout76.png" alt="Fallout 76" loading="lazy">
+                        <h3 class="game__title">Fallout 76</h3>
+                        <p class="game__genre">Supervivencia · Acción</p>
+                        <a class="game__link" href="#destacados">Más información</a>
+                        <b class="game__rating" aria-label="Calificación 4.9 de 5">★ 4.9</b>
+                    </div>
+                </article>
+
+                <article class="col-12 col-md-6 col-lg-4">
+                    <div class="game">
+                        <img class="game__img" src="img/Metro Rivals.jpg" alt="Metro Rivals" loading="lazy">
+                        <h3 class="game__title">Metro Rivals</h3>
+                        <p class="game__genre">Supervivencia · Acción</p>
+                        <a class="game__link" href="#destacados">Más información</a>
+                        <b class="game__rating" aria-label="Calificación 4.0 de 5">★ 4.0</b>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Información -->
+        <section class="section" id="salir-info" aria-labelledby="explora-title">
+            <h2 class="section__tag tag" id="explora-title">Explora Solo GAME</h2>
+            <div class="row g-3">
+                <article class="col-12 col-md-4 info-card" id="plataformas">
+                    <div class="info-card__content">
+                        <h3 class="info-card__title">🎮 Plataformas</h3>
+                        <p class="info-card__desc">PC, PlayStation, Xbox y Nintendo.</p>
+                    </div>
+                </article>
+                <article class="col-12 col-md-4 info-card" id="noticias">
+                    <div class="info-card__content">
+                        <h3 class="info-card__title">📰 Noticias</h3>
+                        <p class="info-card__desc">Novedades y próximos lanzamientos.</p>
+                    </div>
+                </article>
+                <article class="col-12 col-md-4 info-card" id="guia">
+                    <div class="info-card__content">
+                        <h3 class="info-card__title">📖 Guía</h3>
+                        <p class="info-card__desc">Consejos básicos para comenzar a jugar.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <p class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></p>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <h2 class="footer__title">Solo GAME</h2>
+        <p class="footer__text">Videojuegos, recomendaciones y novedades.</p>
+
+        <!-- Iconos de validación -->
+        <div class="footer__validators" aria-label="Validaciones">
+            <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener noreferrer">
+                <img src="https://www.w3.org/Icons/valid-html5" alt="Valid HTML5" width="88" height="31">
+            </a>
+            <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener noreferrer">
+                <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS3" width="88" height="31">
+            </a>
+        </div>
+
+        <small class="footer__copy">© 2026 Solo GAME · ADSO</small>
+    </footer>
+
+    <!-- Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery: animaciones e interacción -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
